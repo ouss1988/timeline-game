@@ -30,11 +30,16 @@ button {
 }
 
 .movingPanel {
+  width: 100%;
   background:#55AABB;
   border: thin dotted #4499AA
+}
 
+.durationPanel {
+  background:#225566;
+  border: thin dotted #4499AA
 }
 
 img {
-  margin-top: 20px;
+  margin-top: 0px;
 }
