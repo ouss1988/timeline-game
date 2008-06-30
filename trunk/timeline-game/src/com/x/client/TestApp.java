@@ -122,7 +122,7 @@ public class TestApp implements EntryPoint
     int error = 0;
     for (int i = 0; i < timeEventPanels.length; i++)
     {
-      int nextYear = leftToYear(timeEventPanels[i].getAbsoluteLeft()
+      int nextYear = leftToYear(timeEventPanels[i].getMarkerLeftPosition()
           - destinationPanel.getAbsoluteLeft());
       x.append(",");
       x.append(nextYear);
