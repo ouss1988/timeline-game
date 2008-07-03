@@ -31,12 +31,12 @@ public class TimeEventPanel extends FocusPanel implements TimeEvent
     outerPanel.setPixelSize(75, height);
     Label testLabel = new Label(text);
     //this.add(testLabel);
-    this.setStyleName("durationPanel");
+    this.setStyleName("movingPanel");
     
     bottomPanel.add(testLabel);
     bottomPanel.setPixelSize(75, height - 20); 
 
-    bottomPanel.setStyleName("durationPanel");
+    bottomPanel.setStyleName("movingPanel");
 
 //    topLeftPanel.setPixelSize(75, 20);
 //    topLeftPanel.setPixelSize(20, 20);
