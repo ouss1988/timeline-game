@@ -23,7 +23,7 @@ public class TestApp implements EntryPoint
 
   public static int TIMELINE_WIDTH = 800;
   public static int TIMELINE_HEIGHT = 100;
-  public static int NUM_TICKS = 10;
+  public static int NUM_TICKS = 20;
 
   private TimeEventPanel[] timeEventPanels = new TimeEventPanel[] {
       new TimeEventPanel(1492, "Columbus Discovers America", TIMELINE_HEIGHT),
@@ -71,12 +71,10 @@ public class TestApp implements EntryPoint
     // labelPanel.add(labelEnd,700,0);
 
     GridConstrainedDropController gridConstrainedDropController = new GridConstrainedDropController(
-        destinationPanel,
-        1,
-        TIMELINE_HEIGHT);
+        destinationPanel, 1, TIMELINE_HEIGHT);
 
     // We can add style names.
-    destinationPanel.setPixelSize(TIMELINE_WIDTH, TIMELINE_HEIGHT);
+    destinationPanel.setPixelSize(TIMELINE_WIDTH, TIMELINE_HEIGHT * 2);
     destinationPanel.addStyleName("destinationPanel");
 
     PickupDragController dragController = new PickupDragController(RootPanel.get(), true);
