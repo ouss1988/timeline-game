@@ -25,7 +25,7 @@ public class TestApp implements EntryPoint
   public static int TIMELINE_HEIGHT = 100;
   public static int NUM_TICKS = 20;
 
-  private TimeEventData timeEventData = new TimeEventData();
+  private TimeEventData timeEventData = TimeEventData.retrieveTimeEventData();
 
   private TimeEventPanel[] timeEventPanels = TimeEventPanel.createTimeEventPanels(
       timeEventData.getTimeEvents(), TIMELINE_HEIGHT);
