@@ -22,7 +22,25 @@ public class TimeEventPanel extends FocusPanel implements TimeEvent
   private SimplePanel bottomPanel = new SimplePanel();
 
   Image markerImage = new Image("marker.gif");
+  public TimeEventPanel(TimeEvent timeEvent, int height)
+  {
+    this(timeEvent.getStartYear(), timeEvent.getDescription(), height);
+  }
   
+  public static TimeEventPanel[] createTimeEventPanels (TimeEvent [] timeEvents, int height)
+  {
+    if (timeEvents == null || timeEvents.length==0)
+    {
+      return null;
+    }
+    
+    TimeEventPanel[] timeEventPanels = new TimeEventPanel [timeEvents.length];
+    for (int i=0;i<timeEvents.length;i++)
+    {
+      timeEventPanels[i] = new TimeEventPanel(timeEvents[i], height);
+    }
+    return timeEventPanels;
+  }
   public TimeEventPanel(int startYear, String text, int height)
   {
     this.description = text;
