@@ -25,18 +25,13 @@ public class TestApp implements EntryPoint
   public static int TIMELINE_HEIGHT = 100;
   public static int NUM_TICKS = 20;
 
-  private TimeEventPanel[] timeEventPanels = new TimeEventPanel[] {
-      new TimeEventPanel(1492, "Columbus Discovers America", TIMELINE_HEIGHT),
-      new TimeEventPanel(1596, "Pilgrims come to America", TIMELINE_HEIGHT),
-      new TimeEventPanel(1776, "Declaration of Independence", TIMELINE_HEIGHT),
-      new TimeEventPanel(1917, "First World War", TIMELINE_HEIGHT),
-      new TimeEventPanel(1944, "World War - II", TIMELINE_HEIGHT),
+  private TimeEventData timeEventData = new TimeEventData();
 
-  };
+  private TimeEventPanel[] timeEventPanels = TimeEventPanel.createTimeEventPanels(
+      timeEventData.getTimeEvents(), TIMELINE_HEIGHT);
 
-  int startYear = 1400;
-  int endYear = 2008;
-  double scalePixelsPerYear = (double) TIMELINE_WIDTH / (endYear - startYear);
+  double scalePixelsPerYear = (double) TIMELINE_WIDTH
+      / (timeEventData.getEndYear() - timeEventData.getStartYear());
 
   private AbsolutePanel destinationPanel = new AbsolutePanel();
   private HorizontalPanel sourcePanel = new HorizontalPanel();
@@ -71,7 +66,9 @@ public class TestApp implements EntryPoint
     // labelPanel.add(labelEnd,700,0);
 
     GridConstrainedDropController gridConstrainedDropController = new GridConstrainedDropController(
-        destinationPanel, 1, TIMELINE_HEIGHT);
+        destinationPanel,
+        1,
+        TIMELINE_HEIGHT);
 
     // We can add style names.
     destinationPanel.setPixelSize(TIMELINE_WIDTH, TIMELINE_HEIGHT * 2);
@@ -133,30 +130,31 @@ public class TestApp implements EntryPoint
 
   private int yearToLeft(int year)
   {
-    if (year < startYear)
+    if (year < timeEventData.getStartYear())
     {
       return 0;
     }
-    else if (year > endYear)
+    else if (year > timeEventData.getEndYear())
     {
       return TIMELINE_WIDTH;
     }
 
-    return (int) (scalePixelsPerYear * (year - startYear));
+    return (int) (scalePixelsPerYear * (year - timeEventData.getStartYear()));
   }
 
   private int leftToYear(int left)
   {
     if (left < 0)
     {
-      return startYear;
+      return timeEventData.getStartYear();
     }
     else if (left > TIMELINE_WIDTH)
     {
-      return endYear;
+      return timeEventData.getEndYear();
     }
 
-    return startYear + (int) Math.round((double) left / scalePixelsPerYear);
+    return timeEventData.getStartYear()
+        + (int) Math.round((double) left / scalePixelsPerYear);
   }
 
 }
