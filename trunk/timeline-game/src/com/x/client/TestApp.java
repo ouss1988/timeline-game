@@ -44,11 +44,9 @@ public class TestApp implements EntryPoint
   {
     Image barImage = new Image("bar.gif");
     VerticalPanel vPanel = new VerticalPanel();
+    vPanel.addStyleName("destinationPanel");
     labelPanel.setPixelSize(TIMELINE_WIDTH, 20);
-    Label labelStart = new Label("Start");
-    labelStart.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
-    Label labelEnd = new Label("End");
-    labelEnd.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
+
     for (int tIdx = 0; tIdx < NUM_TICKS; tIdx++)
     {
       int tickLeftPos = (int) Math
@@ -56,6 +54,8 @@ public class TestApp implements EntryPoint
       tickLabel[tIdx] = new Label();
       labelPanel.add(tickLabel[tIdx], tickLeftPos, 0);
     }
+   // labelPanel.addStyleName("durationPanel");
+    
     // labelPanel.add(labelStart,0,0);
     // labelPanel.add(labelEnd,700,0);
     GridConstrainedDropController gridConstrainedDropController = new GridConstrainedDropController(
