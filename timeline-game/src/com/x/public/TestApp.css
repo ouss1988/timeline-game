@@ -27,7 +27,9 @@ button {
 
 .destinationPanel {
   width: 100%;
-  border-style: solid
+  border-style: solid;
+  border-color:#55AABB;
+  background:#66BBCC
 }
 
 .movingPanel {
@@ -37,7 +39,7 @@ button {
 }
 
 .durationPanel {
-  background:#225566;
+  background:#55AABB;
   border: thin dotted #4499AA
 }
 
