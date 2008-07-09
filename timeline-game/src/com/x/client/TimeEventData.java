@@ -22,34 +22,36 @@ public class TimeEventData
     
     dataSetIdx++;
     dataSets[dataSetIdx] = new TimeEventData();
-    dataSets[dataSetIdx].startYear = 1400;
-    dataSets[dataSetIdx].endYear = 2008;
+    dataSets[dataSetIdx].startYear = 1750;
+    dataSets[dataSetIdx].endYear = 2000;
     dataSets[dataSetIdx].timeEvents = new TimeEvent[] {
-        new TimeEventImpl(1492, "Columbus Discovers America"),
-        new TimeEventImpl(1596, "Pilgrims come to America"),
+        new TimeEventImpl(1861, "American Civil War"),
+        new TimeEventImpl(1898, "Spanish American War"),
         new TimeEventImpl(1776, "Declaration of Independence"),
         new TimeEventImpl(1917, "First World War"),
         new TimeEventImpl(1944, "World War - II")};
     
     dataSetIdx++;
     dataSets[dataSetIdx] = new TimeEventData();
-    dataSets[dataSetIdx].startYear = 1400;
-    dataSets[dataSetIdx].endYear = 2008;
+    dataSets[dataSetIdx].startYear = 1915;
+    dataSets[dataSetIdx].endYear = 1950;
     dataSets[dataSetIdx].timeEvents = new TimeEvent[] {
-        new TimeEventImpl(1492, "Columbus Discovers America"),
-        new TimeEventImpl(1596, "Pilgrims come to America"),
-        new TimeEventImpl(1776, "Declaration of Independence"),
+        new TimeEventImpl(1933, "Prohibition Ends"),
+        new TimeEventImpl(1929, "Great Depression"),
+        new TimeEventImpl(1920, "Prohibition Starts"),
         new TimeEventImpl(1917, "First World War"),
         new TimeEventImpl(1944, "World War - II")};
+
   }
 
   static public TimeEventData retrieveTimeEventData()
   {
-    if (dataSetIdx >= (dataSets.length - 1))
+    dataSetIdx++;
+    if (dataSetIdx >= dataSets.length)
     {
       dataSetIdx = 0;
     }
-  
+
     return dataSets[dataSetIdx];
   }
 
