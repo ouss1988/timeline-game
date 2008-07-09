@@ -1,6 +1,7 @@
 /** Add css rules here for your application. */
 body {
-  font-family:arial,sans-serif
+  font-family:arial,sans-serif;
+  font-size:8px;
 }
 
 div,td {
