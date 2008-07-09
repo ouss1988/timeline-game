@@ -52,6 +52,7 @@ public class TestApp implements EntryPoint
       int tickLeftPos = (int) Math
           .round((TIMELINE_WIDTH * ((double) tIdx / NUM_TICKS)));
       tickLabel[tIdx] = new Label();
+      tickLabel[tIdx].addStyleName("tickLabel");
       labelPanel.add(tickLabel[tIdx], tickLeftPos, 0);
     }
    // labelPanel.addStyleName("durationPanel");
