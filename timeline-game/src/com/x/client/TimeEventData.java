@@ -10,7 +10,7 @@ public class TimeEventData
   static
   {
     dataSetIdx = 0;
-    
+    dataSets[dataSetIdx] = new TimeEventData();
     dataSets[dataSetIdx].startYear = 1400;
     dataSets[dataSetIdx].endYear = 2008;
     dataSets[dataSetIdx].timeEvents = new TimeEvent[] {
@@ -21,7 +21,7 @@ public class TimeEventData
         new TimeEventImpl(1944, "World War - II")};
     
     dataSetIdx++;
-    
+    dataSets[dataSetIdx] = new TimeEventData();
     dataSets[dataSetIdx].startYear = 1400;
     dataSets[dataSetIdx].endYear = 2008;
     dataSets[dataSetIdx].timeEvents = new TimeEvent[] {
@@ -32,7 +32,7 @@ public class TimeEventData
         new TimeEventImpl(1944, "World War - II")};
     
     dataSetIdx++;
-    
+    dataSets[dataSetIdx] = new TimeEventData();
     dataSets[dataSetIdx].startYear = 1400;
     dataSets[dataSetIdx].endYear = 2008;
     dataSets[dataSetIdx].timeEvents = new TimeEvent[] {
@@ -49,6 +49,7 @@ public class TimeEventData
     {
       dataSetIdx = 0;
     }
+  
     return dataSets[dataSetIdx];
   }
 
