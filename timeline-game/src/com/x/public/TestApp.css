@@ -25,6 +25,10 @@ button {
   font-size: 16pt
 }
 
+.tickLabel {
+  color:#181DFF	
+}
+
 .destinationPanel {
   width: 100%;
   border-style: solid;
